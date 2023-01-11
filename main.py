@@ -34,10 +34,9 @@ line_c = Line("C", [
 network = Network([line_a, line_a_one, line_a_two, line_b, line_c])
 
 if __name__ == '__main__':
-    # stop_to_search = str(input("Quel arrêt cherchez-vous ? "))
-    # print(find_stop(stop_to_search))
+    connection = network.find_connection_between_two_stops("Place de la Bourse", "Doyen Brus")
+    print(connection)
 
-    print(line_a_two.isStopOnLine("Iris"))
-
-    print(network.are_stops_on_same_line(
-        "Doyen Brus", "Montaigne-Montesquieu")[0].name)
+    # direction = line_c.find_direction("Quinconces", "Saint-Michel")
+    # print(line_b.find_number_stops_on_travel("Roustaing", "UNITEC"))
+    # print(direction)
