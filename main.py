@@ -34,9 +34,14 @@ line_c = Line("C", [
 network = Network([line_a, line_a_one, line_a_two, line_b, line_c])
 
 if __name__ == '__main__':
-    connection = network.find_connection_between_two_stops("Place de la Bourse", "Doyen Brus")
+    departure = input("Quel est votre arrêt de départ ? ")
+    arrival = input("Quel est votre arrêt d'arrivée ? ")
+
+    departureLine = network.find_stop(departure)
+    arrivalLine = network.find_stop(arrival)
+
+    connection = network.find_connection_between_two_stops(departure, arrival)
     print(connection)
 
-    # direction = line_c.find_direction("Quinconces", "Saint-Michel")
-    # print(line_b.find_number_stops_on_travel("Roustaing", "UNITEC"))
-    # print(direction)
+    nb_stops = network.find_stops_number_on_travel(departure, arrival)
+    print("le trajet comporte " + str(nb_stops) + " arrêts")

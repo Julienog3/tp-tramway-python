@@ -42,5 +42,10 @@ class Network:
         print(arrivalLine[0].find_direction(connection[0], arrival))
 
         return connection
-        # if ():
-            
+
+    def find_stops_number_on_travel(self, departure, arrival):
+        departureLine = self.find_stop(departure)
+        arrivalLine = self.find_stop(arrival)
+# 
+        connection = self.find_connection_between_two_stops(departure, arrival)
+        return departureLine[0].find_stops_number_on_travel(departure, connection[0]) + arrivalLine[0].find_stops_number_on_travel(connection[0], arrival)

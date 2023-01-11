@@ -47,16 +47,14 @@ class Line:
         else:
             return
 
-    def find_number_stops_on_travel(self, departure, arrival):
+    def find_stops_number_on_travel(self, departure, arrival):
         if (self.is_stop_on_line(departure) is not True or self.is_stop_on_line(departure) is not True):
             return
-
-        
 
         departurePosition = self.stops.index(departure)
         arrivalPosition = self.stops.index(arrival)
 
-        return abs(departurePosition - arrivalPosition) - 1
+        return abs(departurePosition - arrivalPosition)
 
 
     def is_stop_on_line(self, stop):
